@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { FaSearch, FaStar, FaQuoteLeft, FaEnvelope } from 'react-icons/fa';
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [email, setEmail] = useState<string>('');
   const router = useRouter();
 
