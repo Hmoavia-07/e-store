@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center md:text-left">
             <h3 className="text-xl font-semibold mb-4">FashionAura</h3>
-            <p className="text-sm">Elevate your style with FashionAura's curated collection of trendsetting clothing.</p>
+            <p className="text-sm">Elevate your style with FashionAura&apos;s curated collection of trendsetting clothing.</p>
           </div>
           <div className="text-center">
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>

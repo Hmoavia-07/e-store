@@ -63,7 +63,7 @@ const About = () => {
         <div className="bg-gray-100 p-8 rounded-lg shadow-inner mb-16">
           <FaQuoteLeft className="text-4xl text-teal-500 mb-4" />
           <blockquote className="text-xl italic text-gray-700 mb-4">
-            "FashionAura isn't just about clothes; it's about making a statement while making a difference."
+          &quot;FashionAura isn&apos;t just about clothes; it&apos;s about making a statement while making a difference.&quot;
           </blockquote>
           <p className="text-right text-gray-600">- Hmoavia_07, Founder</p>
         </div>

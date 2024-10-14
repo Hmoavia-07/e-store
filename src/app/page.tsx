@@ -4,7 +4,7 @@ import { Product } from './pages/products';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
-import { FaSearch, FaStar, FaQuoteLeft, FaEnvelope, FaClipboardList } from 'react-icons/fa';
+import {  FaStar, FaQuoteLeft, FaEnvelope, } from 'react-icons/fa';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState<string>('');
