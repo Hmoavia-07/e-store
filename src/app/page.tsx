@@ -4,10 +4,10 @@ import { Product } from './pages/products';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
-import { FaSearch, FaStar, FaQuoteLeft, FaEnvelope } from 'react-icons/fa';
+import { FaSearch, FaStar, FaQuoteLeft, FaEnvelope, FaClipboardList } from 'react-icons/fa';
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const router = useRouter();
 
@@ -31,7 +31,7 @@ export default function Home() {
         <div className="relative text-center text-white z-10 p-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">Elevate Your Style</h1>
           <p className="text-lg md:text-xl mb-6">Discover our latest minimalist clothing collection</p>
-          <button className="bg-white text-black py-2 px-6 md:py-3 md:px-8 rounded-full text-sm md:text-lg font-semibold hover:bg-gray-200 transition duration-300">
+          <button className="bg-white text-black py-2 px-6 md:py-3 md:px-8 rounded-full text-sm md:text-lg font-semibold hover:bg-gray-300 transition duration-300">
             Shop Now
           </button>
         </div>
@@ -39,7 +39,7 @@ export default function Home() {
 
 
       <div className="container mx-auto p-4 mb-16">
-      <h2 className="text-3xl font-bold mb-8 text-center">Featured Products</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center py-3 px-6 rounded-t-3xl bg-gray-600 text-white">Featured Products</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {filteredProducts.map((product) => (
           <div
@@ -56,14 +56,31 @@ export default function Home() {
               />
             </div>
             <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-              <p className="text-gray-600 mb-4">${product.price}</p>
+              <div className='flex justify-between '>
+              <h2 className="text-xl font-semibold mb-2">{product.name}
+              </h2>
+              <button 
+              type="button" 
+              className="text-yellow-200 hover:text-yellow-300 mb-2"
+              aria-label="Like"
+            >
+              <FaStar className="w-7 h-5" />
+            </button>
+              </div>
+              <div className='flex justify-between'>
+              <p className="text-gray-600 ">Price: ${product.price}</p>
               <button
-                className="w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition duration-300"
-                onClick={() => router.push(`/products/${product.id}`)}
+                className="w-auto  px-4 rounded-full mb-4 hover:bg-indigo-950 hover:text-white outline-none outline-gray-500 transition duration-300"
               >
                 View Product
               </button>
+              </div>
+              <button
+                className="w-full bg-black text-white py-2 px-4 rounded-md hover:bg-indigo-950 transition duration-300"
+              >
+                Add to Cart
+              </button>
+            
             </div>
           </div>
         ))}
@@ -101,7 +118,7 @@ export default function Home() {
       </div>
 
       {/* Newsletter Signup */}
-      <div className="bg-gray-900 text-white py-12 md:py-16">
+      <div className=" py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated</h2>
           <p className="mb-6 md:mb-8 text-lg">Sign up for our newsletter and get 10% off your first order!</p>
@@ -113,14 +130,14 @@ export default function Home() {
                   placeholder="Your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full py-3 px-4 pl-10 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full py-3 px-4 pl-10 rounded-full text-black focus:outline-gray-700 "
                   required
                 />
                 <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               </div>
               <button 
                 type="submit"
-                className="bg-blue-500 text-white py-3 px-6 rounded-full font-semibold hover:bg-blue-600 transition duration-300 sm:w-auto w-full"
+                className="bg-gray-700 text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-500 transition duration-300 sm:w-auto w-full"
               >
                 Subscribe
               </button>

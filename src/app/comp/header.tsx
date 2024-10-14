@@ -69,6 +69,11 @@ const Header = () => {
                 Cart
               </Link>
             </li>
+            <li>
+              <Link href="./pages/about" className="flex items-center hover:text-gray-300 transition duration-300">
+                About Us
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
