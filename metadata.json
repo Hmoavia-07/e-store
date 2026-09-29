@@ -1,0 +1,7 @@
+{
+  "name": "FashionAura - Minimalist Clothing Store",
+  "description": "Discover curated minimalist fashion, stylish apparel, and sustainable trendsetting clothing.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
